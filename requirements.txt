@@ -1,0 +1,16 @@
+numpy==1.26.4
+pandas==2.2.3
+nlpaug==1.1.11
+textblob==0.19.0
+spacy==3.8.7
+torch==2.7.0
+transformers==4.45.2
+nltk==3.9.1
+tqdm==4.66.4
+seaborn==0.13.2
+flask
+scikit-learn
+waitress
+textblob
+seqeval
+wordcloud
