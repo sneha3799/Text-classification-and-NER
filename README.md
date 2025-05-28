@@ -111,14 +111,13 @@ This training configuration was applied consistently across all transformer mode
 
 #### Benchmarking models
 
-I explored various transformer models for sentence classification. The models chosen represent different trade-offs in terms of size, performance, and computational requirements. Below is a breakdown of the models used and their observed performance:
+I explored various transformer models for sentence classification. The models chosen represent different trade-offs in terms of size, performance, and computational requirements. When trained all the models achieved an accuracy of 100% and F1 score of 1.0. They were then tested on 10 unsceen sentences. Below is a breakdown of the models used and their observed performance:
 
-| model | Performance (Accuracy %) |
-| ----------------------------  | ------------------------------- |
-| **microsoft/MiniLM-L12-H384-uncased** | 20   |
-| **sentence-transformers/all-MiniLM-L6-v2**   | 60   |
-| **prajjwal1/bert-tiny** | 40   |
-| **distilbert/distilbert-base-uncased** | 90   |
+| model | Performance (Accuracy %) | F1 score |
+| ----------------------------  | ------------------------------- | ------------------------------- |
+| **sentence-transformers/all-MiniLM-L6-v2**   | 60   | 0.62 |
+| **prajjwal1/bert-tiny** | 40   | 0.31 |
+| **distilbert/distilbert-base-uncased** | 90   | 0.91 |
 
 ### Deployment on GCP
 
@@ -204,9 +203,12 @@ With the NER data, the following data preprocessing techniques were applied -
 
 Once the dataset is processed, different models are benchmarked to find the best transformer model. 
 
-| model | Performance (Accuracy %) | Inference time (s) |
-| ----------------------------  | ------------------------------- | ------------------------------- |
-| **microsoft/MiniLM-L12-H384-uncased** | 20   | 0.01 |
-| **sentence-transformers/all-MiniLM-L6-v2**   | 60   |0.01 |
-| **prajjwal1/bert-tiny** | 40   |0.01 |
-| **distilbert/distilbert-base-uncased** | 90   |0.01 |
+| model | Performance (Accuracy %) | Inference time (s) | F1 score |
+| ----------------------------  | ------------------------------- | ------------------------------- | ------------------------------- |
+| **dslim/distilbert-NER** | 100   | 0.034 | 1.0 |
+| **dslim/bert-base-NER**   | 83.33   |0.061 | 0.625 |
+| **Clinical-AI-Apollo/Medical-NER** | 83.33   |0.126 | 0.625 |
+
+As it can be seen that `dslim/distilbert-NER` performed the best at testing and had the best inference time when tested over 100 iterations. The final classification report - 
+
+![Final Report](assets/report.png)
