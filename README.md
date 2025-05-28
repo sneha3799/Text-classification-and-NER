@@ -1,6 +1,10 @@
 # ATEN SECURITY TECH CHALLENGE - SNEHA RAO
 
-The following challenge was implemented using Python 3.10. All the models were trained and tested on MacOS M1 with 16 GB RAM.
+The following challenge was implemented using Python 3.10. All the models were trained and tested on MacOS M1 with 16 GB RAM. All the trained models can be found on the drive link - 
+
+```
+https://drive.google.com/drive/folders/1uqMk3P6uSTsnG9MHmp-V8lSxqizGtjCv?usp=share_link
+```
 
 ## Task 1: Sentence Classification
 
